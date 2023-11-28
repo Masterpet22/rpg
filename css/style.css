@@ -1,17 +1,18 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
 
 body {
     min-height: 100vh;
     display: grid;
-    grid-template-rows: 60px 1fr 80px;
+    grid-template-columns: minmax(200px, 300px) 2fr 1fr;
+    grid-template-rows: 60px 1fr 60px;
     grid-template-areas:
-        'aside header header header'
-        'aside main main main'
-        'footer footer footer footer'
+        'aside header header'
+        'aside main main'
+        'footer footer footer'
     ;
     color: white;
 }
@@ -32,9 +33,26 @@ main {
 aside {
     background-color: green;
     grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+aside .perfil {
+    max-width: 200px;
+}
+
+aside .perfil .perfil-img {
+    width: 100%;
 }
 
 footer {
     background-color: yellow;
     grid-area: footer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+    font-size: 2rem;
 }
