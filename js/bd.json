@@ -1,0 +1,18 @@
+{
+    "tarjetas" : [
+      {
+        "imagen": "img/pico.png",
+        "descripcionImagen": "Descripción de la imagen",
+        "titulo": "Título de la tarjeta 1",
+        "descripcion": "Descripción de la tarjeta 1. Puedes agregar aquí más detalles sobre el contenido de la tarjeta.",
+        "calificacion": "⭐⭐⭐⭐"
+      },
+      {
+        "imagen": "img/pico.png",
+        "descripcionImagen": "Otra descripción de la imagen",
+        "titulo": "Título de la tarjeta 2",
+        "descripcion": "Descripción de la tarjeta 2. Puedes agregar aquí más detalles sobre el contenido de la tarjeta.",
+        "calificacion": "⭐⭐⭐"
+      }
+    ]
+  }

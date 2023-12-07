@@ -2,37 +2,48 @@
     margin: 0;
     padding: 0;
     box-sizing: content-box;
+    align-self: auto;
 }
+:root{
+    --cl-principal: #5AB7FA;
+    --cl-secundario: blue;
+    --cl-apoyo: yellow;
 
+    --cl-fuente-principal: #000;
+    --cl-fuente-secundaria: #fff;
+    --cl-fuente-apoyo: #ccc;
+
+}
 body {
     margin: 0 auto;
     max-width: 1440px;
-    min-height: 100vh;
+    max-height: 100vh;
     display: grid;
     grid-template-columns: minmax(200px, 300px) 2fr 1fr;
     grid-template-rows: 60px 1fr 60px;
     grid-template-areas:
         'aside header header'
         'aside main main'
-        'footer footer footer'
+        'footer main main'
     ;
 }
 
 /* header */
 header {
-    background-color: blue;
+    background-color: var(--cl-secundario);
     grid-area: header;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    color: white;
+    color: var(--cl-fuente-secundaria);
 }
 
 /* main */
 main {
-    /* background-color: red; */
     grid-area: main;
     padding: 30px;
+    max-height: 90%;
+    overflow-y: scroll;
 }
 
 main .activas {
@@ -41,6 +52,7 @@ main .activas {
     gap: 20px;
     max-height: 380px;
     overflow-y: scroll;
+    border-bottom: 2px solid #000;
 }
 
 .card {
@@ -73,19 +85,22 @@ main .activas {
     font-size: 1em;
     color: #555;
 }
-main .equipo{
+
+main .equipo {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 30px;
     padding: 10px;
-    max-height: 180px;
-    overflow-y: scroll;
+    /* max-height: 180px; */
+    /* overflow-y: scroll; */
 }
-.contactos .lista-contactos{
+
+.contactos .lista-contactos {
     display: grid;
     row-gap: 10px;
 }
-.contactos .lista-contactos .contacto-item{
+
+.contactos .lista-contactos .contacto-item {
     width: 100%;
     max-height: 150px;
     display: flex;
@@ -96,25 +111,34 @@ main .equipo{
     padding: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.contactos .lista-contactos .contacto-item img{
+.contactos .lista-contactos .contacto-item .profile-name{
+    align-self: center;
+}
+
+.contactos .lista-contactos .contacto-item img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    align-self: s;
 }
-.habilidades{
+
+.habilidades {
     padding: 20px;
     border: 2px solid #ccc;
     border-radius: 10px;
 }
-.skill-list{
+
+.skill-list {
     list-style: none;
 }
-.habilidad-rango{
+
+.habilidad-rango {
     width: 100%;
 }
+
 /* Aside */
 aside {
-    background-color: green;
+    background-color: var(--cl-principal);
     grid-area: aside;
     display: flex;
     flex-direction: column;
@@ -130,16 +154,18 @@ aside .perfil {
 aside .perfil .perfil-img {
     width: 100%;
 }
-aside .nivel{
+
+aside .nivel {
     height: 250px;
     width: 250px;
     background-color: #fff;
     border-radius: 50%;
     align-self: flex-end;
 }
+
 /* Footer */
 footer {
-    background-color: yellow;
+    background-color: var(--cl-apoyo);
     grid-area: footer;
     display: flex;
     justify-content: space-around;
